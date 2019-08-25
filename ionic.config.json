@@ -1,5 +1,7 @@
 {
   "name": "askMIT",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

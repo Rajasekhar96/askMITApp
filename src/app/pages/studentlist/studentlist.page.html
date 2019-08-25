@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+                <ion-back-button></ion-back-button>
+            </ion-buttons>
+        <ion-title>Student list</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+        <div *ngFor="let i of jsonItems">
+        <div class="card" >
+            <div class="card-header text-primary">
+                    Reg No : {{i.studentRegNo}}
+            </div>
+            <div class="card-body ">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">DOB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: {{i.dateOfBirth}}</li>
+                        <li class="list-group-item">Maths&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: {{i.mathsMarks}}</li>
+                        <li class="list-group-item">Physics &nbsp;&nbsp;&nbsp;: {{i.physicsMarks}}</li>
+                        <li class="list-group-item">Chemistry :  {{i.chemistryMarks}}</li>
+                    </ul>
+                </div>
+            <div class="card-footer text-primary">
+                   Name :  {{i.studentName}}
+            </div>
+        </div><br>
+    </div>
+</ion-content>

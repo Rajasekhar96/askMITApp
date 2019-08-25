@@ -1,0 +1,161 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+        </ion-buttons>
+    <ion-title>Student Reg</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
+        <ion-card class="welcome-card">
+    
+          <ion-item>
+            <ion-label position="floating" color="primary">Register Number</ion-label>
+            <ion-input type="text" formControlName="regNum"></ion-input>
+          </ion-item>
+          <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.regNum">
+              <div class="error-message"
+                *ngIf="validations_form.get('regNum').hasError(validation.type) && (validations_form.get('regNum').dirty || validations_form.get('regNum').touched)">
+                <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
+              </div>
+            </ng-container>
+          </div> 
+                    
+          <ion-item>
+            <ion-label position="floating" color="primary">Student Name</ion-label>
+            <ion-input type="text" formControlName="studName"></ion-input>
+          </ion-item>
+          <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.studName">
+              <div class="error-message"
+                *ngIf="validations_form.get('studName').hasError(validation.type) && (validations_form.get('studName').dirty || validations_form.get('studName').touched)">
+                <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+
+          <ion-item>
+            <ion-label position="floating" color="primary"> Date of Birth</ion-label>
+            <ion-datetime displayFormat="DD/MM/YYYY" picker-format="DD/MM/YYYY" min="1990-01-01" max="2030-12-31" formControlName="dob"></ion-datetime>
+          </ion-item>
+            <div class="validation-errors">
+              <ng-container *ngFor="let validation of validation_messages.dob">
+                <div class="error-message"
+                  *ngIf="validations_form.get('dob').hasError(validation.type) && (validations_form.get('dob').dirty || validations_form.get('dob').touched)">
+                  <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
+                </div>
+              </ng-container>
+              </div>
+          
+                  <ion-list>
+                    <!-- <ion-list-header>Select the Gender</ion-list-header> -->                  
+                    <ion-item>
+                        <ion-label color="primary">Gender</ion-label>
+                      <ion-select placeholder="Select One" color="primary" formControlName="gender" >
+                        <ion-select-option value="Female">Female</ion-select-option>
+                        <ion-select-option value="Male">Male</ion-select-option>
+                      </ion-select>
+                    </ion-item>
+                    </ion-list>
+                    <div class="validation-errors">
+                      <ng-container *ngFor="let validation of validation_messages.gender">
+                        <div class="error-message"
+                          *ngIf="validations_form.get('gender').hasError(validation.type) && (validations_form.get('gender').dirty || validations_form.get('gender').touched)">
+                          <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
+                        </div>
+                      </ng-container>
+                      </div>
+
+                    <ion-list>                    
+                      <ion-item>
+                          <ion-label color="primary">Select the childern</ion-label>
+                        <ion-select placeholder="Select One" formControlName="child" >
+                          <ion-select-option value="1">1st childern</ion-select-option>
+                          <ion-select-option value="2">2nd childern</ion-select-option>
+                          <ion-select-option value="3">3rd childern</ion-select-option>
+                        </ion-select>
+                      </ion-item>
+                      </ion-list>
+                      <div class="validation-errors">
+                        <ng-container *ngFor="let validation of validation_messages.child">
+                          <div class="error-message"
+                            *ngIf="validations_form.get('child').hasError(validation.type) && (validations_form.get('child').dirty || validations_form.get('child').touched)">
+                            <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
+                          </div>
+                        </ng-container>
+                        </div>
+
+
+              <ion-item>
+                <ion-label position="floating" color="primary"> Father Name</ion-label>
+                <ion-input type="text" formControlName="fatherName"></ion-input>
+              </ion-item>
+              <div class="validation-errors">
+                <ng-container *ngFor="let validation of validation_messages.fatherName">
+                  <div class="error-message"
+                    *ngIf="validations_form.get('fatherName').hasError(validation.type) && (validations_form.get('fatherName').dirty || validations_form.get('fatherName').touched)">
+                    <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
+                  </div>
+                </ng-container>
+              </div>
+
+              <ion-item>
+                <ion-label position="floating" color="primary"> Mother Name</ion-label>
+                <ion-input type="text" formControlName="motherName"></ion-input>
+              </ion-item>
+              <div class="validation-errors">
+                <ng-container *ngFor="let validation of validation_messages.motherName">
+                  <div class="error-message"
+                    *ngIf="validations_form.get('motherName').hasError(validation.type) && (validations_form.get('motherName').dirty || validations_form.get('motherName').touched)">
+                    <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
+                  </div>
+                </ng-container>
+              </div>
+
+            <ion-item>
+            <ion-label position="floating" color="primary">Maths Marks</ion-label>
+            <ion-input type="text" formControlName="mathsMarks"></ion-input>
+          </ion-item>
+          <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.mathsMarks">
+              <div class="error-message"
+                *ngIf="validations_form.get('mathsMarks').hasError(validation.type) && (validations_form.get('mathsMarks').dirty || validations_form.get('mathsMarks').touched)">
+                <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+
+          <ion-item>
+            <ion-label position="floating" color="primary">Physics Marks</ion-label>
+            <ion-input type="text" formControlName="physicsMarks"></ion-input>
+          </ion-item>
+          <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.physicsMarks">
+              <div class="error-message"
+                *ngIf="validations_form.get('physicsMarks').hasError(validation.type) && (validations_form.get('physicsMarks').dirty || validations_form.get('physicsMarks').touched)">
+                <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+
+          <ion-item>
+            <ion-label position="floating" color="primary">Chemistry Marks</ion-label>
+            <ion-input type="text" formControlName="chemistry"></ion-input>
+          </ion-item>
+          <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.chemistry">
+              <div class="error-message"
+                *ngIf="validations_form.get('chemistry').hasError(validation.type) && (validations_form.get('chemistry').dirty || validations_form.get('chemistry').touched)">
+                <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+
+          <ion-button color="primary" class="submit-btn" expand="full" type="submit" [disabled]="!validations_form.valid">
+            Register</ion-button>
+        </ion-card>
+      </form>
+</ion-content>

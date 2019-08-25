@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding-top>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-6" *ngIf="userRole === 'admin'" >
+        <div class="card" (click)="goToStudentList()" >
+          <img class="card-img-top" src="../../../assets/img/studentList.png" alt="Card image cap">
+          <div class="card-body mt-0 text-center">
+              <button class="btn btn-primary">Student List</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-6" *ngIf="userRole === 'admin'" >
+          <div class="card" (click)="goToRankingList()" >
+            <img class="card-img-top" src="../../../assets/img/rank.png" alt="Card image cap">
+            <div class="card-body mt-0 text-center">
+                <button class="btn btn-primary">Ranking</button>
+            </div>
+          </div>
+        </div>
+
+      <div class="col-6" *ngIf="userRole === 'user'" >
+          <div class="card" (click)="goToStudRegister()" >
+            <img class="card-img-top" src="../../../assets/img/studRegister.png" alt="Card image cap">
+            <div class="card-body mt-0 text-center">
+                <button class="btn btn-primary">Registration</button>
+            </div>
+          </div>
+        </div>
+
+      <div class="col-6">
+        <div class="card" (click)="goToSettings()" >
+            <div class="card">
+                <img class="card-img-top" src="../../../assets/img/settings.jpg" alt="Card image cap">
+                <div class="card-body mt-0 text-center">
+                    <button class="btn btn-primary">Settings</button>
+                </div>
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</ion-content>

@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Rankings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="table-responsive">
+  <table class="table table-bordered table-over">
+    <tr text-center >
+      <td>Ranking</td>
+      <td>Reg No</td>
+      <td>Name</td>
+    </tr>
+    <tr *ngFor="let i of jsonItems">
+      <td text-center>{{i.slNo}}</td>
+      <td>{{i.studentRegNo}}</td>
+      <td>{{i.studentName}}</td>
+    </tr>
+  </table>
+</div>
+</ion-content>
